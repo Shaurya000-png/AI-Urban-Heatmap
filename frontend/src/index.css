@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-text;
+  }
+}
+
+/* Leaflet Map Styling */
+.leaflet-container {
+  @apply rounded-lg shadow-lg;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+.leaflet-popup-content-wrapper {
+  @apply bg-surface text-text;
+}
+
+.leaflet-popup-tip {
+  @apply bg-surface;
+}
+
+/* Fix for map tiles not loading */
+.leaflet-tile-container {
+  pointer-events: auto;
+}
+
+/* Ensure map container has proper dimensions */
+.map-container {
+  height: 600px;
+  width: 100%;
+  position: relative;
+}
+
+/* Animation for fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Custom Popup Styling */
+.leaflet-popup-content {
+  margin: 0 !important;
+  max-width: 400px !important;
+}
+
+.leaflet-popup-content-wrapper {
+  padding: 0 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2) !important;
+}
+
+.custom-popup .leaflet-popup-content {
+  width: auto !important;
+}
+
+/* Heat layer styling */
+.leaflet-heatmap-layer {
+  opacity: 0.6;
+}
